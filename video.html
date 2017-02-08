@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Video Player with playlist</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> 
+ 
+<style>
+/************ Video Player ****************/
+video {
+    box-shadow: none !important;
+    padding-top: 15px;
+    width: 100%;
+}
+
+#video-container {
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+}
+#description {
+  color: #666666;
+    margin: auto;
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+    padding: 15px;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+#playlist {
+    display:table;
+    margin: 0;
+    width: 100%;
+}
+#playlist p {
+  width: 100%;
+  float: left;
+  margin: 0;
+  color: #666666;
+  font-size: 14px;
+  padding-left: 15px;
+}
+#playlist li{
+  cursor: pointer;
+  padding: 5px;
+  display: inline-flex;
+  width: 100%;
+  float: left;
+}
+
+video::-internal-media-controls-download-button {
+    display:none;
+}
+
+video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+video::-webkit-media-controls-panel {
+    width: calc(100% + 30px); /* Adjust as needed */
+}
+
+#playlist li:hover{
+    color:blue;                        
+}
+#video-player {
+    width:100% !important;
+    height:auto;   
+}
+.video-thumbnail {
+    width: 190px;
+    height: 108px;
+}
+#video-container #title {
+    font-size: 3em;
+    margin: 10px 15px;
+    font-family: helvetica, arial, sans-serif;
+}
+.new {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 2px;
+  font-size: 12px;
+  border-radius: 2px;
+  margin-left: 8px;
+}
+</style>
+
+</head>
+<body>
+ 
+ <section id="video-container">
+<div id="title" title="" type="text">Main title</div>
+   
+    <div class="stroke"></div>
+    </br>
+  
+
+<video id="video-player" controls="controls" poster="" data-description="" src="http://www.html5videoplayer.net/videos/toystory.mp4"></video>
+
+<br/>
+<ul id="playlist" class="item">
+
+
+<li id="videoplay" data-description="Video 4" movieurl="http://www.html5videoplayer.net/videos/toystory.mp4" title="Title 4
+" label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum mi nulla, sit amet pharetra ipsum suscipit suscipit. Morbi efficitur, erat id ultrices euismod, tellus arcu cursus velit, ut rutrum neque quam sit amet urna. In ipsum mi, tempor nec sodales a, facilisis ut dolor.
+" type="video/mp4" moviesposter="">
+      <img src="http://www.html5videoplayer.net/poster/toystory.jpg" class="video-thumbnail">
+        <p><strong>Title 4</strong></br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum mi nulla, sit amet pharetra ipsum suscipit suscipit. Morbi efficitur, erat id ultrices euismod, tellus arcu cursus velit, ut rutrum neque quam sit amet urna. In ipsum mi, tempor nec sodales a, facilisis ut dolor.
+
+        </p>
+    </li>
+
+
+<li id="videoplay" data-description="Video 3" movieurl="http://www.html5videoplayer.net/videos/toystory.mp4" title="Title 3" label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum mi nulla, sit amet pharetra ipsum suscipit suscipit. Morbi efficitur, erat id ultrices euismod, tellus arcu cursus velit, ut rutrum neque quam sit amet urna. In ipsum mi, tempor nec sodales a, facilisis ut dolor.
+" type="video/mp4" moviesposter="">
+      <img src="http://www.html5videoplayer.net/poster/toystory.jpg" class="video-thumbnail">
+        <p><strong>Title 3</strong></br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum mi nulla, sit amet pharetra ipsum suscipit suscipit. Morbi efficitur, erat id ultrices euismod, tellus arcu cursus velit, ut rutrum neque quam sit amet urna. In ipsum mi, tempor nec sodales a, facilisis ut dolor.
+        </p>
+    </li>
+
+
+ <li id="videoplay" data-description="Video 2" movieurl="http://www.html5videoplayer.net/videos/toystory.mp4" title="Title 2" label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum mi nulla, sit amet pharetra ipsum suscipit suscipit. Morbi efficitur, erat id ultrices euismod, tellus arcu cursus velit, ut rutrum neque quam sit amet urna. In ipsum mi, tempor nec sodales a, facilisis ut dolor.
+" type="video/mp4" moviesposter="">
+      <img src="http://www.html5videoplayer.net/poster/toystory.jpg" class="video-thumbnail">
+        <p><strong>Title 2</strong></br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum mi nulla, sit amet pharetra ipsum suscipit suscipit. Morbi efficitur, erat id ultrices euismod, tellus arcu cursus velit, ut rutrum neque quam sit amet urna. In ipsum mi, tempor nec sodales a, facilisis ut dolor.
+
+
+        </p>
+    </li>
+
+
+    <li id="videoplay" data-description="Video 1" movieurl="http://www.html5videoplayer.net/videos/toystory.mp4" title="Title 1" label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum mi nulla, sit amet pharetra ipsum suscipit suscipit. Morbi efficitur, erat id ultrices euismod, tellus arcu cursus velit, ut rutrum neque quam sit amet urna. In ipsum mi, tempor nec sodales a, facilisis ut dolor.
+" type="video/mp4" moviesposter="http://www.html5videoplayer.net/poster/toystory.jpg">
+      <img src="http://www.html5videoplayer.net/poster/toystory.jpg" class="video-thumbnail">
+        <p><strong>Title 1</strong></br>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum mi nulla, sit amet pharetra ipsum suscipit suscipit. Morbi efficitur, erat id ultrices euismod, tellus arcu cursus velit, ut rutrum neque quam sit amet urna. In ipsum mi, tempor nec sodales a, facilisis ut dolor.
+
+
+        </p>
+    </li>
+ 
+</div>
+
+</ul>
+
+
+
+
+
+
+  </section>
+
+  <script>
+  // Video Script
+$(function() {
+    $("#playlist li").on("click", function() {
+        $("#video-player").attr({
+            "src": $(this).attr("movieurl"),
+            "poster": "",
+            "autoplay": "autoplay",
+            "data-description": $(this).attr("data-description"),
+            "title": $(this).attr("title")
+        })
+    })
+     $("#playlist li").on("click", function() {
+        $("#description").attr({
+            "label": $(this).attr("label")
+        }).text($(this).attr("label"))
+    })
+     $("#playlist li").on("click", function() {
+        $("#title").attr({
+            "title": $(this).attr("title")
+        }).text($(this).attr("title"))
+    })
+    $("#video-player").attr({
+        "src": $("#playlist li").eq(0).attr("movieurl"),
+        "poster": $("#playlist li").eq(0).attr("moviesposter"),
+        "data-description": $("#playlist li").eq(0).attr("data-description"),
+        "title": $("#playlist li").eq(0).attr("title")    
+    })
+})
+
+// GA script
+document.addEventListener('DOMContentLoaded', init, false)
+var videoId = document.getElementById('video-player');
+var videoTitle = $('#videoplay').click(function () {
+  $(this).data('description');
+  console.log($(this).attr('data-description'));
+});
+console.log(videoTitle);
+
+function init() {
+  videoId.addEventListener('ended', videoEnd, false)
+  videoId.addEventListener('timeupdate', videoTimeUpdate, false)
+  videoId.addEventListener('play', videoPlay, false)
+  videoId.addEventListener('pause', videoPause, false)
+}
+
+function setKeyFrames(duration) {
+  var quarter = (duration / 4).toFixed(1)
+  sessionStorage.setItem('one', quarter)
+  sessionStorage.setItem('two', (quarter * 2).toFixed(1))
+  sessionStorage.setItem('three', (quarter * 3).toFixed(1))
+}
+
+function videoTimeUpdate() {
+  var curTime = videoId.currentTime.toFixed(1);
+  var videoTitle = $(this).attr('data-description');
+  switch (curTime) {
+  case sessionStorage.getItem('one'):
+    ga('send', 'event', 'video', '25% video played', videoTitle)
+    sessionStorage.setItem('one', null)
+  case sessionStorage.getItem('two'):
+    ga('send', 'event', 'video', '50% video played', videoTitle)
+    sessionStorage.setItem('two', null)
+  case sessionStorage.getItem('three'):
+    ga('send', 'event', 'video', '75% video played', videoTitle)
+    sessionStorage.setItem('three', null)
+  }
+}
+
+function videoEnd() {
+  ga('send', 'event', 'video', '100% video played', $(this).attr('data-description'))
+}
+
+function videoPlay() {
+  ga('send', 'event', 'video', 'video played', $(this).attr('data-description'))
+  setKeyFrames(this.duration)
+}
+
+function videoPause() {
+  ga('send', 'event', 'video', 'video paused', $(this).attr('data-description'))
+}
+  </script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-0000000-00', 'auto');
+      ga('send', 'pageview');
+  </script>
+</body>
+</html>
